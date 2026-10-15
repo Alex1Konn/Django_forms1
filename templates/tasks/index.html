@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="{% url 'postuser' %}">
+    {% csrf_token %}
+
+    <h3>Контактные данные</h3>
+    {{ form.first_name }}
+    {{ form.name }}
+    {{ form.surname }}
+    {{ form.email }}
+    {{ form.phone }}
+
+    <h3>Паспортные данные</h3>
+    {{ form.seria }}
+    {{ form.nomer }}
+    {{ form.data_issue }}
+    {{ form.issued_by }}
+    {{ form.code }}
+
+    <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>
